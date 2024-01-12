@@ -1,0 +1,32 @@
+<!-- dog_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Dog List{% endblock %}
+
+{% block header %}Dog List{% endblock %}
+
+{% block content %}
+    <table class="dog-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Breed</th>
+                <th>Date of Birth</th>
+                <th>Place of Birth</th>
+                <th>Owner</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dog in dogs %}
+                <tr>
+                    <td>{{ dog.name }}</td>
+                    <td>{{ dog.breed.name }}</td>
+                    <td>{{ dog.date_of_birth }}</td>
+                    <td>{{ dog.place_of_birth }}</td>
+                    <td>{{ dog.owner.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

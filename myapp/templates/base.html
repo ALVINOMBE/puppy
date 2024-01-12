@@ -1,0 +1,33 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My App{% endblock %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <header>
+        <h1>{% block header %}My App{% endblock %}</h1>
+    </header>
+    <nav>
+        <a href="{% url 'breed-list' %}">🐾 Breed Table</a> | 
+        <a href="{% url 'dog-list' %}">🐶 Dog Table</a> | 
+        <a href="{% url 'healthrecord-list' %}">🏥 Health Record Table</a> | 
+        <a href="{% url 'owner-list' %}">👤 Owner Table</a> | 
+        <a href="{% url 'veterinarian-list' %}">👩‍⚕️ Veterinarian Table</a>
+    </nav>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        <i class="fas fa-paw"></i> &copy; 2024 My App. All rights reserved.
+    </footer>
+</body>
+</html>

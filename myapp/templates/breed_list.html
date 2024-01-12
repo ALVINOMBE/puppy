@@ -1,0 +1,26 @@
+<!-- breed_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Breed List{% endblock %}
+
+{% block header %}Breed List{% endblock %}
+
+{% block content %}
+    <table class="breed-table">
+        <thead>
+            <tr>
+                <th>Breed Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for breed in breeds %}
+                <tr>
+                    <td>{{ breed.name }}</td>
+                    <td>{{ breed.description }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

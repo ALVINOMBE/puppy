@@ -1,0 +1,30 @@
+<!-- health_record_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Health Record List{% endblock %}
+
+{% block header %}Health Record List{% endblock %}
+
+{% block content %}
+    <table class="health-record-table">
+        <thead>
+            <tr>
+                <th>Summary</th>
+                <th>Details</th>
+                <th>Dog</th>
+                <th>Veterinarian</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in health_records %}
+                <tr>
+                    <td>{{ record.summary }}</td>
+                    <td>{{ record.details }}</td>
+                    <td>{{ record.dog.name }}</td>
+                    <td>{{ record.veterinarian.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
